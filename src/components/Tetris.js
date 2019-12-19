@@ -15,6 +15,8 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+
+// sound2
 import sound2 from './sounds/merry_christmas.mp3'
 
 
@@ -133,6 +135,5 @@ const Tetris = () => {
     </StyledTetrisWrapper>
   );
 };
-
 
 export default Tetris;

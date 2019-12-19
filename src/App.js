@@ -4,12 +4,10 @@ import SnowStorm from 'react-snowstorm';
 import SurpriseSanta from 'surprise-santa';
 import AudioPlayer from './components/AudioPlayer';
 
-
 export default function App() {
   
   return (
     <div className="App"> 
-     
       <AudioPlayer />
       <SnowStorm />
       <Tetris />
