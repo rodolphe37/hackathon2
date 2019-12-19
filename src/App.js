@@ -4,7 +4,15 @@ import SnowStorm from 'react-snowstorm';
 
 const App = () => (
   <div className="App">
-    <SnowStorm />
+    <SnowStorm 
+    snowStick = "false"
+    snowCharacter = "*"
+    snowWidthMax = "50px"
+    snowHeightMax = "50px"
+    flakesMaxActive = "280"
+    flakesMax = "280"
+    
+    />
     <Tetris />
   </div>
 
