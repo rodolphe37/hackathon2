@@ -17,7 +17,9 @@ import Display from './Display';
 import StartButton from './StartButton';
 
 // sound2
-import sound2 from './sounds/merry_christmas.mp3'
+import sound2 from './sounds/merry_christmas.mp3';
+
+import ChristmasLight from './ChristmasLight';
 
 
 const Tetris = () => {
@@ -113,6 +115,7 @@ const Tetris = () => {
         onKeyUp={keyUp}
     >
       <StyledTetris>
+      <ChristmasLight />
         <Stage stage={stage} />
         <aside>
           {gameOver ? (

@@ -1,9 +1,8 @@
 import React from 'react';
 import sound from './jingle-bells.mp3';
 
-class AudioPlayer extends React.Component {
+export default function AudioPlayer() {
     
-    render() {
         return (
             <div>
                 <audio autoPlay>
@@ -11,7 +10,6 @@ class AudioPlayer extends React.Component {
                 </audio>
             </div>
         );
-    };
 };
 
-export default AudioPlayer;
+
