@@ -15,10 +15,13 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+import sound2 from './sounds/merry_christmas.mp3'
+
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [state, setState] = useState(0);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -26,7 +29,7 @@ const Tetris = () => {
       rowsCleared
     );
 
-  console.log('re-render');
+
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -120,11 +123,17 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          <StartButton callback={startGame} />
+          <StartButton 
+          callback={startGame}  
+          onMouseEnter={() => setState(1)} />
+          <audio autoPlay>
+            <source src={sound2} type="audio/mpeg" />
+          </audio>
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
   );
 };
+
 
 export default Tetris;

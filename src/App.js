@@ -2,10 +2,15 @@ import React from 'react';
 import Tetris from './components/Tetris';
 import Snowf from './components/Snowf.js';
 import neige from './img/neige.png';
+import SurpriseSanta from 'surprise-santa';
+import AudioPlayer from './components/AudioPlayer';
 
-const App = () => (
-  <div className="App">
-    <Snowf
+
+export default function App() {
+  
+  return (
+    <div className="App"> 
+     <Snowf
       amount={200}
       size={11}
       speed={5}
@@ -16,10 +21,10 @@ const App = () => (
       image={neige}
       zIndex={null}
       resize={true}
-    />
-    <Tetris />
-  </div>
-
-);
-
-export default App;
+      />
+      <AudioPlayer />
+      <Tetris />
+      <SurpriseSanta minTime={5} maxTime={10} />
+    </div>
+  );
+};
