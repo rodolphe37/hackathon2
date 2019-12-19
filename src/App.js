@@ -5,10 +5,11 @@ import neige from './img/neige.png';
 import SurpriseSanta from 'surprise-santa';
 import AudioPlayer from './components/AudioPlayer';
 
+
 export default function App() {
   
   return (
-    <div className="App"> 
+    <div className="App">
      <Snowf
       amount={200}
       size={11}
