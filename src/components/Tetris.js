@@ -16,9 +16,16 @@ import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
 
+// sound2
+import sound2 from './sounds/merry_christmas.mp3';
+// Colors effect on the top of the window
+// import ChristmasLight from './ChristmasLight';
+
+
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [state, setState] = useState(0);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -26,7 +33,7 @@ const Tetris = () => {
       rowsCleared
     );
 
-  console.log('re-render');
+
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -107,11 +114,13 @@ const Tetris = () => {
         onKeyDown={e => move(e)} 
         onKeyUp={keyUp}
     >
+       {/* <ChristmasLight /> */}
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
-            <Display gameOver={gameOver} text="Game Over" />
+            <Display gameOver={gameOver}
+            text={`Game Over Points: ${score}`} />
           ) : (
             <div>
               <Display text={`Score: ${score}`} />
@@ -119,7 +128,12 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          <StartButton callback={startGame} />
+          <StartButton 
+          callback={startGame}  
+          onMouseEnter={() => setState(1)} />
+          <audio autoPlay>
+            <source src={sound2} type="audio/mpeg" />
+          </audio>
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
