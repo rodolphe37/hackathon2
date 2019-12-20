@@ -18,8 +18,8 @@ import StartButton from './StartButton';
 
 // sound2
 import sound2 from './sounds/merry_christmas.mp3';
-
-import ChristmasLight from './ChristmasLight';
+// Colors effect on the top of the window
+// import ChristmasLight from './ChristmasLight';
 
 
 const Tetris = () => {
@@ -114,8 +114,8 @@ const Tetris = () => {
         onKeyDown={e => move(e)} 
         onKeyUp={keyUp}
     >
+       {/* <ChristmasLight /> */}
       <StyledTetris>
-      <ChristmasLight />
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
